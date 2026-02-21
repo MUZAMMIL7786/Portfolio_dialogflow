@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ConvoBridge \u2014 AI Booking Agents for Travel & Hospitality</title>
+<title>myBananaBot — AI Booking Agents for Travel & Hospitality</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -11,7 +11,7 @@
     --ink: #0a0a0f;
     --paper: #f5f2eb;
     --cream: #faf8f3;
-    --accent: #e8440a;
+    --accent: #f5c800;
     --accent2: #1a6b4a;
     --muted: #6b6760;
     --border: rgba(10,10,15,0.1);
@@ -85,7 +85,7 @@
     font-weight: 500;
     transition: background 0.2s, transform 0.15s !important;
   }
-  .nav-cta:hover { background: var(--accent) !important; transform: scale(1.02); }
+  .nav-cta:hover { background: var(--accent) !important; color: var(--ink) !important; transform: scale(1.02); }
 
   /* HERO */
   .hero {
@@ -174,7 +174,7 @@
 
   .btn-primary {
     background: var(--accent);
-    color: white;
+    color: var(--ink);
     padding: 0.875rem 2rem;
     border-radius: 100px;
     font-family: 'DM Sans', sans-serif;
@@ -187,9 +187,9 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    box-shadow: 0 4px 20px rgba(232,68,10,0.3);
+    box-shadow: 0 4px 20px rgba(245,200,0,0.35);
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,68,10,0.4); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,200,0,0.5); }
 
   .btn-ghost {
     background: transparent;
@@ -318,7 +318,7 @@
   }
   .msg.user .msg-bubble {
     background: var(--accent);
-    color: white;
+    color: var(--ink);
     border-bottom-right-radius: 4px;
   }
   .msg-time {
@@ -371,9 +371,7 @@
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     cursor: none;
-    color: white;
-    font-size: 0.9rem;
-    transition: transform 0.15s;
+    color: var(--ink);
     flex-shrink: 0;
   }
   .chat-send:hover { transform: scale(1.08); }
@@ -433,7 +431,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: white;
+    color: var(--ink);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     display: flex;
@@ -513,7 +511,7 @@
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(232,68,10,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(245,200,0,0.1) 0%, transparent 70%);
     pointer-events: none;
   }
   .how-inner {
@@ -841,7 +839,7 @@
     line-height: 1.4;
   }
   .plan-features li::before {
-    content: '\u2713';
+    content: '✓';
     color: #4cde80;
     font-weight: 700;
     flex-shrink: 0;
@@ -864,7 +862,7 @@
   .plan-cta:hover { background: rgba(255,255,255,0.2); }
   .pricing-card.popular .plan-cta {
     background: white;
-    color: var(--accent);
+    color: var(--ink);
     border-color: white;
   }
   .pricing-card.popular .plan-cta:hover { background: rgba(255,255,255,0.9); }
@@ -948,6 +946,101 @@
     .how-section, .results-section, .pricing-section { padding: 4rem 1.5rem; }
   }
 
+  /* Banana Mascot Logo */
+  .banana-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  .banana-svg {
+    width: 48px;
+    height: 56px;
+    flex-shrink: 0;
+    animation: bananaFloat 3s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+  .banana-svg-sm {
+    width: 38px;
+    height: 44px;
+    flex-shrink: 0;
+    animation: bananaFloat 3s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+  @keyframes bananaFloat {
+    0%, 100% { transform: translateY(0px) rotate(-3deg); }
+    50% { transform: translateY(-4px) rotate(2deg); }
+  }
+  /* Blinking eyes animation */
+  .eye-blink {
+    animation: blink 4s ease-in-out infinite;
+    transform-origin: center;
+  }
+  .eye-blink-2 {
+    animation: blink 4s ease-in-out infinite 0.1s;
+    transform-origin: center;
+  }
+  @keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.08); }
+  }
+  /* Smile bounce */
+  .smile-bounce {
+    animation: smilePop 3s ease-in-out infinite;
+  }
+  @keyframes smilePop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  /* Eye shine twinkle */
+  .shine-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .banana-img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    animation: bananaFloat 3s ease-in-out infinite;
+    flex-shrink: 0;
+    /* remove black background from image */
+    mix-blend-mode: multiply;
+  }
+  .banana-img-sm {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    animation: bananaFloat 3s ease-in-out infinite;
+    flex-shrink: 0;
+    mix-blend-mode: screen;
+  }
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .banana-logo-text em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .banana-logo-text-sm {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: white;
+    line-height: 1;
+  }
+  .banana-logo-text-sm em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
   /* Scroll animations */
   .reveal {
     opacity: 0;
@@ -968,13 +1061,16 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">Convo<span>Bridge</span></a>
+  <a href="#" class="banana-logo">
+    <img src="banana-mascot.png" class="banana-img" alt="myBananaBot mascot">
+    <div class="banana-logo-text">my<em>BananaBot</em></div>
+  </a>
   <ul>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#demo" class="nav-cta">Book a Demo \u2192</a></li>
+    <li><a href="#demo" class="nav-cta">Book a Demo →</a></li>
   </ul>
 </nav>
 
@@ -986,10 +1082,10 @@
       Specialized in Travel & Hospitality
     </div>
     <h1>Your front desk <em>never</em> sleeps again</h1>
-    <p class="hero-sub">We build AI booking agents on WhatsApp, phone, and Google \u2014 so your hotel or travel business captures every reservation, 24/7, without hiring more staff.</p>
+    <p class="hero-sub">We build AI booking agents on WhatsApp, phone, and Google — so your hotel or travel business captures every reservation, 24/7, without hiring more staff.</p>
     <div class="hero-actions">
-      <a href="#demo" class="btn-primary">Get a Free Audit \u2192</a>
-      <a href="#how" class="btn-ghost">\u25b6 See How It Works</a>
+      <a href="#demo" class="btn-primary">Get a Free Audit →</a>
+      <a href="#how" class="btn-ghost">▶ See How It Works</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
@@ -1010,16 +1106,16 @@
   <div class="hero-right">
     <div class="chat-demo">
       <div class="chat-header">
-        <div class="chat-avatar">\ud83c\udfe8</div>
+        <div class="chat-avatar">🏨</div>
         <div>
-          <div class="chat-name">Sunset Resort \u2014 AI Concierge</div>
+          <div class="chat-name">Sunset Resort — myBananaBot</div>
           <div class="chat-status"><span class="status-dot"></span> Online now</div>
         </div>
       </div>
       <div class="chat-messages" id="chatMessages">
         <div class="msg bot" style="animation-delay:0.2s">
           <div>
-            <div class="msg-bubble">Hi there! \ud83d\udc4b I'm the Sunset Resort booking assistant. How can I help you today?</div>
+            <div class="msg-bubble">Hi there! 👋 I'm the Sunset Resort booking assistant. How can I help you today?</div>
             <div class="quick-replies">
               <div class="quick-reply">Book a Room</div>
               <div class="quick-reply">Check Availability</div>
@@ -1032,11 +1128,11 @@
         </div>
         <div class="msg bot" style="animation-delay:1.4s">
           <div>
-            <div class="msg-bubble">Great choice! \ud83c\udf84 We have availability Dec 20\u201322. How many guests will be staying?</div>
+            <div class="msg-bubble">Great choice! 🎄 We have availability Dec 20–22. How many guests will be staying?</div>
             <div class="quick-replies">
               <div class="quick-reply">1 Guest</div>
               <div class="quick-reply">2 Guests</div>
-              <div class="quick-reply">3\u20134 Guests</div>
+              <div class="quick-reply">3–4 Guests</div>
             </div>
           </div>
         </div>
@@ -1045,13 +1141,13 @@
         </div>
         <div class="msg bot" style="animation-delay:2.6s">
           <div>
-            <div class="msg-bubble">Perfect! I found 3 rooms available. Our Ocean View King is $189/night \u2014 shall I hold it for you? \ud83c\udf0a</div>
+            <div class="msg-bubble">Perfect! I found 3 rooms available. Our Ocean View King is $189/night — shall I hold it for you? 🌊</div>
           </div>
         </div>
       </div>
       <div class="chat-input-row">
-        <input class="chat-input" type="text" placeholder="Type a message\u2026" readonly>
-        <button class="chat-send">\u2192</button>
+        <input class="chat-input" type="text" placeholder="Type a message…" readonly>
+        <button class="chat-send">→</button>
       </div>
     </div>
   </div>
@@ -1060,20 +1156,20 @@
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
-    <div class="ticker-item">WhatsApp Booking Agents <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Google Business Messages <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Voice & IVR Automation <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Dialogflow CX & ES <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Hotel & Resort Concierge <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Travel Agency Bots <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Restaurant Reservations <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">WhatsApp Booking Agents <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Google Business Messages <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Voice & IVR Automation <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Dialogflow CX & ES <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Hotel & Resort Concierge <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Travel Agency Bots <span class="ticker-sep">\u2726</span></div>
-    <div class="ticker-item">Restaurant Reservations <span class="ticker-sep">\u2726</span></div>
+    <div class="ticker-item">WhatsApp Booking Agents <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Google Business Messages <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Voice & IVR Automation <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Dialogflow CX & ES <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Hotel & Resort Concierge <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Travel Agency Bots <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Restaurant Reservations <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">WhatsApp Booking Agents <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Google Business Messages <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Voice & IVR Automation <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Dialogflow CX & ES <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Hotel & Resort Concierge <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Travel Agency Bots <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Restaurant Reservations <span class="ticker-sep">✦</span></div>
   </div>
 </div>
 
@@ -1104,22 +1200,22 @@
   <h2 class="section-title">Every missed call is a missed booking</h2>
   <div class="pain-grid">
     <div class="pain-card reveal">
-      <div class="pain-icon">\ud83d\udcf5</div>
+      <div class="pain-icon">📵</div>
       <h3>After-hours bookings disappear</h3>
-      <p>73% of travelers research and book outside of 9\u20135 business hours. If nobody's answering, they're booking your competitor instead.</p>
+      <p>73% of travelers research and book outside of 9–5 business hours. If nobody's answering, they're booking your competitor instead.</p>
     </div>
     <div class="pain-card reveal">
-      <div class="pain-icon">\ud83d\udccb</div>
+      <div class="pain-icon">📋</div>
       <h3>Staff buried in repetitive calls</h3>
-      <p>Your team spends hours answering the same 10 questions \u2014 rates, availability, check-in time \u2014 instead of delivering actual hospitality.</p>
+      <p>Your team spends hours answering the same 10 questions — rates, availability, check-in time — instead of delivering actual hospitality.</p>
     </div>
     <div class="pain-card highlight reveal">
-      <div class="pain-icon">\ud83d\udcb8</div>
+      <div class="pain-icon">💸</div>
       <h3>OTA commissions eating your margin</h3>
-      <p>Every booking through Expedia or Booking.com costs you 15\u201325%. A smart bot pushes direct bookings \u2014 and keeps that margin in your pocket.</p>
+      <p>Every booking through Expedia or Booking.com costs you 15–25%. A smart bot pushes direct bookings — and keeps that margin in your pocket.</p>
     </div>
     <div class="pain-card reveal">
-      <div class="pain-icon">\ud83d\udcc9</div>
+      <div class="pain-icon">📉</div>
       <h3>No follow-up = lost revenue</h3>
       <p>Inquiries without instant replies have a 90% drop-off rate. Automated follow-up via WhatsApp recovers deals your team never got to.</p>
     </div>
@@ -1135,28 +1231,28 @@
       <div class="step reveal">
         <div class="step-num">01</div>
         <div class="step-tag">Week 1</div>
-        <div class="step-icon">\ud83d\udd0d</div>
+        <div class="step-icon">🔍</div>
         <h3>Discovery & Audit</h3>
         <p>We map your current booking flows, identify drop-off points, and pinpoint which channels your guests use most.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
-        <div class="step-tag">Week 1\u20132</div>
-        <div class="step-icon">\ud83c\udfd7\ufe0f</div>
+        <div class="step-tag">Week 1–2</div>
+        <div class="step-icon">🏗️</div>
         <h3>Build & Train</h3>
-        <p>We build your custom Dialogflow agent with your brand voice, room types, policies, and real booking logic \u2014 not generic templates.</p>
+        <p>We build your custom Dialogflow agent with your brand voice, room types, policies, and real booking logic — not generic templates.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
-        <div class="step-tag">Week 2\u20133</div>
-        <div class="step-icon">\ud83d\udd0c</div>
+        <div class="step-tag">Week 2–3</div>
+        <div class="step-icon">🔌</div>
         <h3>Integrate & Test</h3>
         <p>Connect to WhatsApp, your phone line, or Google Business. Test with real scenarios. Zero downtime deployment via CI/CD.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">04</div>
         <div class="step-tag">Ongoing</div>
-        <div class="step-icon">\ud83d\udcc8</div>
+        <div class="step-icon">📈</div>
         <h3>Optimize & Scale</h3>
         <p>Monthly reports on conversations, bookings captured, and missed intents. We tune the bot as your business grows.</p>
       </div>
@@ -1170,20 +1266,20 @@
   <h2 class="section-title reveal">Agents built for how your guests actually communicate</h2>
   <div class="services-grid">
     <div class="service-card featured reveal">
-      <div class="service-icon">\ud83d\udcac</div>
+      <div class="service-icon">💬</div>
       <h3>WhatsApp Booking Agent</h3>
-      <p>Meet guests where they already are. Our WhatsApp agents handle full booking flows \u2014 room selection, date confirmation, payment links, and post-stay follow-up \u2014 entirely in chat.</p>
+      <p>Meet guests where they already are. Our WhatsApp agents handle full booking flows — room selection, date confirmation, payment links, and post-stay follow-up — entirely in chat.</p>
       <div class="service-feature-list">
-        <div class="feature-item"><div class="feature-check">\u2713</div> End-to-end booking in conversation</div>
-        <div class="feature-item"><div class="feature-check">\u2713</div> Upsell upgrades & add-ons automatically</div>
-        <div class="feature-item"><div class="feature-check">\u2713</div> Human handoff when needed</div>
-        <div class="feature-item"><div class="feature-check">\u2713</div> Post-stay review collection</div>
+        <div class="feature-item"><div class="feature-check">✓</div> End-to-end booking in conversation</div>
+        <div class="feature-item"><div class="feature-check">✓</div> Upsell upgrades & add-ons automatically</div>
+        <div class="feature-item"><div class="feature-check">✓</div> Human handoff when needed</div>
+        <div class="feature-item"><div class="feature-check">✓</div> Post-stay review collection</div>
       </div>
     </div>
     <div class="service-card dark reveal">
-      <div class="service-icon">\ud83d\udcde</div>
+      <div class="service-icon">📞</div>
       <h3>Telephony & IVR Agent</h3>
-      <p>Never miss a phone booking again. Our voice agents answer calls, qualify guests, check availability, and confirm reservations \u2014 24/7.</p>
+      <p>Never miss a phone booking again. Our voice agents answer calls, qualify guests, check availability, and confirm reservations — 24/7.</p>
       <div class="channel-pills">
         <span class="channel-pill">Twilio Voice</span>
         <span class="channel-pill">Dialogflow CX</span>
@@ -1191,7 +1287,7 @@
       </div>
     </div>
     <div class="service-card light reveal">
-      <div class="service-icon">\ud83d\uddfa\ufe0f</div>
+      <div class="service-icon">🗺️</div>
       <h3>Google Business Messages</h3>
       <p>Capture guests the moment they search for you on Google Maps. Convert high-intent searches directly into confirmed bookings.</p>
       <div class="channel-pills" style="margin-top:1.25rem;">
@@ -1221,7 +1317,7 @@
         <div class="result-label">Average time from kickoff to live agent on your channels</div>
       </div>
       <div class="result-card reveal">
-        <div class="result-num">23\u00d7</div>
+        <div class="result-num">23×</div>
         <div class="result-label">Average ROI reported by hospitality clients using AI concierge</div>
       </div>
     </div>
@@ -1232,11 +1328,11 @@
 <section class="testimonial-section">
   <div class="testimonial-block reveal">
     <div class="testimonial-text">
-      "Before ConvoBridge, we were losing weekend bookings every Friday night after 6 PM. Now our WhatsApp agent closes reservations while we sleep. It paid for itself in the first month."
+      "Before myBananaBot, we were losing weekend bookings every Friday night after 6 PM. Now our WhatsApp agent closes reservations while we sleep. It paid for itself in the first month."
     </div>
     <div class="testimonial-author">
       <div class="author-name">Marcus T.</div>
-      <div class="author-role">General Manager \u2014 BlueBay Boutique Hotel, Miami FL</div>
+      <div class="author-role">General Manager — BlueBay Boutique Hotel, Miami FL</div>
       <div class="author-metric">
         <div class="metric-big">+42%</div>
         <div class="metric-desc">Direct bookings in the first 60 days after deployment</div>
@@ -1250,4 +1346,149 @@
   <div class="pricing-inner">
     <div class="section-label">Simple Pricing</div>
     <h2 class="section-title reveal">No retainers. No surprises.</h2>
-    <p class="section-sub">One-time build fee. Optional monthly optimization. You own
+    <p class="section-sub">One-time build fee. Optional monthly optimization. You own the bot.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price"><sup>$</sup>1,499</div>
+        <div class="plan-desc">One-time setup fee</div>
+        <ul class="plan-features">
+          <li>1 channel (WhatsApp OR Web)</li>
+          <li>Dialogflow ES agent</li>
+          <li>Up to 15 custom intents</li>
+          <li>Booking & FAQ flows</li>
+          <li>GitHub deployment pipeline</li>
+          <li>2 weeks of support</li>
+        </ul>
+        <a href="#demo" class="plan-cta">Get Started</a>
+      </div>
+      <div class="pricing-card popular reveal">
+        <div class="popular-tag">Most Popular</div>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price"><sup>$</sup>3,499</div>
+        <div class="plan-desc">One-time setup fee</div>
+        <ul class="plan-features">
+          <li>3 channels (WhatsApp + Voice + GBM)</li>
+          <li>Dialogflow CX agent</li>
+          <li>Unlimited intents & flows</li>
+          <li>CRM / PMS integration</li>
+          <li>Upsell & follow-up flows</li>
+          <li>Human handoff setup</li>
+          <li>60 days of support & tuning</li>
+        </ul>
+        <a href="#demo" class="plan-cta">Book a Demo</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price" style="font-size:2.2rem;">Custom</div>
+        <div class="plan-desc">Multi-property or complex builds</div>
+        <ul class="plan-features">
+          <li>Multiple properties / brands</li>
+          <li>Custom API integrations</li>
+          <li>Multilingual support (ES/FR/PT)</li>
+          <li>Analytics dashboard</li>
+          <li>Dedicated Slack channel</li>
+          <li>Monthly optimization retainer</li>
+        </ul>
+        <a href="#demo" class="plan-cta">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="demo">
+  <div class="section-label">Get Started</div>
+  <h2>Ready to stop missing bookings?</h2>
+  <p>Book a free 30-minute audit. We'll show you exactly where you're losing reservations and what a bot would cost to fix it — no sales pitch, just numbers.</p>
+  <div class="cta-actions">
+    <a href="/cdn-cgi/l/email-protection#d4bcb1b8b8bb94b7bbbaa2bbb6a6bdb0b3b1fab5bd" class="btn-primary">Book Free Audit →</a>
+    <a href="https://calendly.com" class="btn-ghost">View Live Demo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="banana-logo">
+    <img src="banana-mascot.png" class="banana-img-sm" alt="myBananaBot mascot">
+    <div class="banana-logo-text-sm">my<em>BananaBot</em></div>
+  </a>
+  <div class="footer-links">
+    <a href="#how">How It Works</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/cdn-cgi/l/email-protection#d8b0bdb4b4b798bbb7b6aeb7baaab1bcbfbdf6b9b1">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 myBananaBot. All rights reserved.</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button, .quick-reply').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+      cursor.style.background = '#0a0a0f';
+      ring.style.opacity = '0';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursor.style.background = 'var(--accent)';
+      ring.style.opacity = '0.5';
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Chat simulation - replay typing animation
+  let chatPlayed = false;
+  const chatObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !chatPlayed) {
+      chatPlayed = true;
+      const messages = document.querySelectorAll('.msg');
+      messages.forEach((msg, i) => {
+        msg.style.opacity = '0';
+        msg.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          msg.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          msg.style.opacity = '1';
+          msg.style.transform = 'translateY(0)';
+        }, i * 700 + 200);
+      });
+    }
+  }, { threshold: 0.3 });
+  const chatDemo = document.querySelector('.chat-demo');
+  if (chatDemo) chatObserver.observe(chatDemo);
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = docum
