@@ -928,22 +928,111 @@
     flex-shrink: 0;
   }
 
-  /* Responsive */
+  /* ── TABLET ── */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { min-height: 500px; }
+    nav { padding: 1rem 1.5rem; }
     nav ul { display: none; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 6rem 1.5rem 3rem; }
+    .hero-right { min-height: 420px; padding: 3rem 1.5rem; }
+
+    h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+    .hero-sub { font-size: 1rem; max-width: 100%; }
+    .hero-stats { gap: 1.5rem; }
+
+    .pain-section, .services-section,
+    .testimonial-section, .cta-section { padding: 4rem 1.5rem; }
+    .how-section, .results-section, .pricing-section { padding: 4rem 1.5rem; }
+
     .pain-grid { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
     .services-grid { grid-template-columns: 1fr; }
     .results-grid { grid-template-columns: 1fr 1fr; }
-    .testimonial-block { grid-template-columns: 1fr; }
+    .testimonial-block { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem; }
     .pricing-grid { grid-template-columns: 1fr; }
+
     footer { flex-direction: column; gap: 1.5rem; text-align: center; }
-    nav { padding: 1rem 1.5rem; }
-    .hero-left { padding: 6rem 1.5rem 3rem; }
-    .pain-section, .services-section, .testimonial-section, .cta-section { padding: 4rem 1.5rem; }
-    .how-section, .results-section, .pricing-section { padding: 4rem 1.5rem; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    /* Nav */
+    nav { padding: 0.85rem 1.2rem; }
+    .banana-img { width: 38px; height: 38px; }
+    .banana-logo-text { font-size: 0.95rem; }
+
+    /* Hero */
+    .hero-left { padding: 5.5rem 1.2rem 2.5rem; }
+    .hero-right { display: none; } /* hide chat demo on small screens */
+    h1 { font-size: 2.1rem; line-height: 1.1; }
+    .hero-sub { font-size: 0.95rem; margin-top: 1.2rem; }
+    .hero-tag { font-size: 0.68rem; }
+    .hero-actions { flex-direction: column; gap: 0.75rem; }
+    .btn-primary, .btn-ghost { width: 100%; text-align: center; justify-content: center; padding: 0.9rem 1.5rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; margin-top: 2.5rem; }
+    .stat-num { font-size: 1.6rem; }
+    .stat-label { font-size: 0.72rem; }
+
+    /* Ticker */
+    .ticker-inner { animation-duration: 12s; }
+
+    /* Logos */
+    .logos-section { padding: 2rem 1.2rem; }
+
+    /* Pain */
+    .pain-section { padding: 3rem 1.2rem; }
+    .pain-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .pain-card { padding: 1.5rem; }
+    .section-title { font-size: 1.7rem; }
+
+    /* How it works */
+    .how-section { padding: 3rem 1.2rem; }
+    .steps { grid-template-columns: 1fr; gap: 1px; }
+    .step { padding: 1.75rem 1.5rem; }
+    .step-num { font-size: 2.5rem; }
+
+    /* Services */
+    .services-section { padding: 3rem 1.2rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .service-card { padding: 1.75rem; }
+
+    /* Results */
+    .results-section { padding: 3rem 1.2rem; }
+    .results-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .result-card { padding: 1.5rem 1rem; }
+    .result-num { font-size: 2rem; }
+
+    /* Testimonial */
+    .testimonial-section { padding: 3rem 1.2rem; }
+    .testimonial-block { padding: 2rem 1.5rem; gap: 1.5rem; }
+    .testimonial-text { font-size: 1rem; }
+    .metric-big { font-size: 2rem; }
+
+    /* Pricing */
+    .pricing-section { padding: 3rem 1.2rem; }
+    .pricing-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .pricing-card { padding: 2rem 1.5rem; }
+    .plan-price { font-size: 2.4rem; }
+
+    /* CTA */
+    .cta-section { padding: 4rem 1.2rem; }
+    .cta-section h2 { font-size: 1.9rem; }
+    .cta-actions { flex-direction: column; gap: 0.75rem; }
+    .cta-actions .btn-primary,
+    .cta-actions .btn-ghost { width: 100%; justify-content: center; }
+
+    /* Footer */
+    footer { padding: 2rem 1.2rem; gap: 1.25rem; }
+    .footer-links { gap: 0.75rem; }
+    .banana-img-sm { width: 32px; height: 32px; }
+    .banana-logo-text-sm { font-size: 0.9rem; }
+
+    /* Cursor off on touch */
+    .cursor, .cursor-ring { display: none; }
+    body { cursor: auto; }
+    a, button { cursor: pointer; }
   }
 
   /* Banana Mascot Logo */
