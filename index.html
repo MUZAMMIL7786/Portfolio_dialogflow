@@ -1487,7 +1487,7 @@
   <h2>Ready to stop missing bookings?</h2>
   <p>Book a free 30-minute audit. We'll show you exactly where you're losing reservations and what a bot would cost to fix it — no sales pitch, just numbers.</p>
   <div class="cta-actions">
-    <a href="/cdn-cgi/l/email-protection#d4bcb1b8b8bb94b7bbbaa2bbb6a6bdb0b3b1fab5bd" class="btn-primary">Book Free Audit →</a>
+    <a href="mailto:hello@mybananabot.com" class="btn-primary">Book Free Audit →</a>
     <a href="https://calendly.com" class="btn-ghost">View Live Demo</a>
   </div>
 </section>
@@ -1502,12 +1502,12 @@
     <a href="#how">How It Works</a>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
-    <a href="/cdn-cgi/l/email-protection#d8b0bdb4b4b798bbb7b6aeb7baaab1bcbfbdf6b9b1">Contact</a>
+    <a href="mailto:hello@mybananabot.com">Contact</a>
   </div>
   <div class="footer-copy">© 2025 myBananaBot. All rights reserved.</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1541,7 +1541,7 @@
     });
   });
 
-  // Scroll reveal
+  // Scroll reveal — remove opacity:0 so content always visible, animate as bonus
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1550,10 +1550,18 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // Chat simulation - replay typing animation
+  // Immediately mark anything already in viewport as visible
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    }
+  });
+
+  // Chat animation
   let chatPlayed = false;
   const chatObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting && !chatPlayed) {
@@ -1576,4 +1584,13 @@
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const target = docum
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
