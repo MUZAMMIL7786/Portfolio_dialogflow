@@ -1593,9 +1593,26 @@
   });
 </script>
 
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/03/03/19/20260303194804-ALSBL6OU.js" defer></script>
-    
+    <!-- <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/03/03/19/20260303194804-ALSBL6OU.js" defer></script> -->
+const typebotInitScript = document.createElement("script");
+typebotInitScript.type = "module";
+typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+
+Typebot.initBubble({
+  typebot: "my-typebot-j9pav25",
+  previewMessage: {
+    message: "I have a question for you!",
+    autoShowDelay: 5000,
+  },
+  theme: {
+    button: { backgroundColor: "#1D1D1D" },
+    chatWindow: { backgroundColor: "#F8F8F8" },
+  },
+});
+`;
+document.body.append(typebotInitScript);
+
 
     
 </body>
